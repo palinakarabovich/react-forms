@@ -1,4 +1,88 @@
 .app {
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(238, 244, 255);
+  width: 100%;
+  height: 100vh;
+}
+
+.page{
+  background-color: white;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 15px;
+  width: 60%;
+  height: 80%;
+  box-shadow: -4px 6px 47px -18px rgba(133,128,133,1);
+  display: flex;
+  gap: 50px
+}
+
+.sidebar{
+  width: 30%;
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  gap: 15px;
+  border-radius: 10px;
+  background-image: url('../../img/bg.svg');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.step{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ gap: 10px;
+}
+
+.circle{
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number{
+  margin: 0;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.step__description{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.step__counter{
+  margin: 0;
+  color: rgb(170, 150, 255);
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.step__text{
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 900;
 }
