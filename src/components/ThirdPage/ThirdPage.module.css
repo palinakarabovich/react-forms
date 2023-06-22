@@ -1,0 +1,74 @@
+.list{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid rgb(0, 30, 92);
+  border-radius: 15px;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.group{
+  width: 10%;
+}
+
+.input{
+  display: none;
+}
+
+.checkbox{
+  width: 20px;
+  height: 20px;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.input:checked + .checkbox{
+  background-color: rgb(83, 0, 255);
+  border-color: rgb(83, 0, 255);
+  background-image: url('../../img/check-mark.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px 10px;
+}
+
+.info{
+  width: 70%;
+}
+
+.option{
+  margin: 0;
+  color: rgb(0, 30, 92);
+  font-size: 15px;
+  font-weight: 700;
+
+}
+
+.caption{
+  margin: 0;
+  font-size: 15px;
+  color: gray;
+}
+
+.price{
+  font-weight: 700;
+  font-size: 15px;
+  color: rgb(83, 0, 255);
+}
