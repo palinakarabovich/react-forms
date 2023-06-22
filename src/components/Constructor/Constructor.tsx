@@ -2,6 +2,7 @@ import React from 'react';
 import FirstPage from '../FirstPage/FirstPage';
 import styles from './Constructor.module.css'
 import SecondPage from '../SecondPage/SecondPage';
+import ThirdPage from '../ThirdPage/ThirdPage';
 
 const Constructor: React.FC = () => {
   return(
@@ -10,8 +11,12 @@ const Constructor: React.FC = () => {
       <h2 className={styles.title}>Personal info</h2>
       <p className={styles.paragraph}>Please provide your name, email address and phone number.</p>
     </div>
-    <SecondPage />
-    <button className={styles.button}>Next step</button>
+    <ThirdPage />
+    <div className={styles.buttons}>
+    <button className={styles.button__back}>Go back</button>
+    <button className={styles.button__next}>Next step</button>
+    </div>
+
   </section>
   )
 }
