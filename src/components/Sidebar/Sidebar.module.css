@@ -36,6 +36,16 @@
   justify-content: center;
 }
 
+.circle__current{
+  background-color: rgb(247, 248, 255);
+   color: rgb(0, 30, 92);
+}
+
+.circle__viewed{
+  color: rgb(170, 150, 255);
+  border-color: rgb(170, 150, 255);
+}
+
 .number{
   margin: 0;
   font-weight: 900;
@@ -61,4 +71,8 @@
   text-transform: uppercase;
   font-size: 15px;
   font-weight: 900;
+}
+
+.step__textViewed{
+  color:rgb(170, 150, 255);
 }

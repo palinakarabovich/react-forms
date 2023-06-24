@@ -8,3 +8,8 @@ export interface ConstructorProps {
   setStep:  React.Dispatch<React.SetStateAction<number>>,
   step: number
 }
+
+export interface StepsValue {
+  step: number,
+  text: string
+}
