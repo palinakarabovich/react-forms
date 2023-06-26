@@ -1,7 +1,7 @@
 import React from "react";
-import styles from './FirstPage.module.css'
+import styles from './Form.module.css'
 
-const FirstPage: React.FC = () => {
+const Form: React.FC = () => {
   return (
     <form className={styles.form}>
       <label className={styles.label}>Name</label>
@@ -14,4 +14,4 @@ const FirstPage: React.FC = () => {
   )
 }
 
-export default FirstPage;
+export default Form;

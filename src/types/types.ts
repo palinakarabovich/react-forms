@@ -24,3 +24,4 @@ export interface pageDataValue {
   page: number,
   component: React.JSX.Element
 }
+

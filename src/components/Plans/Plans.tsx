@@ -1,8 +1,6 @@
-import styles from './SecondPage.module.css'
+import styles from './Plans.module.css'
 import React from "react";
-import arcadeIcon from '../../img/icon-arcade.svg'
-import advancedIcon from '../../img/icon-advanced.svg'
-import proIcon from '../../img/icon-pro.svg'
+import { dataPlan } from '../../assets/data';
 
 const SecondPage: React.FC = () => {
 
@@ -15,27 +13,21 @@ const SecondPage: React.FC = () => {
   return (
     <div className={styles.container}>
       <ul className={styles.list}>
-        <li className={styles.section}>
-          <img className={styles.icon} src={arcadeIcon} />
-          <p className={styles.plan}>Arcade</p>
-          <p className={styles.price}>$9/mo</p>
-        </li>
-        <li className={styles.section}>
-          <img className={styles.icon} src={advancedIcon} />
-          <p className={styles.plan}>Advanced</p>
-          <p className={styles.price}>$12/mo</p>
-        </li>
-        <li className={styles.section}>
-          <img className={styles.icon} src={proIcon} />
-          <p className={styles.plan}>Pro</p>
-          <p className={styles.price}>$15/mo</p>
-        </li>
+        {
+          dataPlan.map((d) => (
+            <li className={styles.section}>
+              <img className={styles.icon} src={d.icon} alt={d.name}/>
+              <p className={styles.plan}>{d.name}</p>
+              <p className={styles.price}>{d.price}</p>
+            </li>
+          ))
+        }
       </ul>
       <div className={styles.choice}>
         <label className={styles.label} htmlFor='checkbox-input' onClick={handleToggle}>Monthly</label>
         <div className={styles.slider}>
           <input
-          id='checkbox-input'
+            id='checkbox-input'
             type="checkbox"
             className={styles.checkbox}
             checked={isChecked}
