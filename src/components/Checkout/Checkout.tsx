@@ -2,13 +2,18 @@ import React from 'react';
 import { SUCCESS_ICON } from '../../utils/constants';
 import styles from './Checkout.module.css';
 import { CheckoutProps } from '../../types/types';
+import { useAppDispatch } from '../../hooks/useDispatch';
+import { beginFromStart } from '../../redux/slices/stepsSlice';
 
 
-const Checkout: React.FC<CheckoutProps> = ({ setStep }) => {
+const Checkout: React.FC<CheckoutProps> = () => {
+
+  const dispatch = useAppDispatch();
 
   const handleResetClick = () => {
-    setStep((pr) => pr = 1)
+    dispatch(beginFromStart())
   }
+
   return (
     <div className={styles.checkout}>
       <div className={styles.icon}>

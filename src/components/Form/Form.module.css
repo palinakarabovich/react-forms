@@ -1,3 +1,21 @@
+.wrapper{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form{
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
 .label{
   font-size: 12px;
   color: rgb(0, 30, 92);
@@ -16,6 +34,19 @@
   padding: 10px;
   font-weight: 900;
   box-sizing: border-box;
+}
+
+.button__next{
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(0, 30, 92);
+  color: white;
+  font-weight: 700;
+  padding: 10px 20px;
+  font-size: 15px;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-bottom: 20px;
 }
 
 

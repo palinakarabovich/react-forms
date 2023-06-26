@@ -1,45 +1,107 @@
 import styles from './Plans.module.css'
 import React from "react";
 import { dataPlan } from '../../assets/data';
+import { useAppDispatch } from '../../hooks/useDispatch';
+import { stepForward } from '../../redux/slices/stepsSlice';
+import { savePlan } from '../../redux/slices/formSlice';
+import { planValue } from '../../types/types';
 
-const SecondPage: React.FC = () => {
+const Plans: React.FC = () => {
 
-  const [isChecked, setIsChecked] = React.useState(false);
+  const [yearly, setYearly] = React.useState<boolean>(false);
+  const [selectedPlan, setSelectedPlan] = React.useState<number>(1);
+  const dispatch = useAppDispatch();
 
   const handleToggle = () => {
-    setIsChecked(!isChecked);
+    setYearly(!yearly);
   };
+
+  const handlePlanClick = (index: number) => {
+    setSelectedPlan(index);
+  }
+
+  const handleBackClick = () => {
+    dispatch(stepForward())
+  }
+
+  const handleForwardClick = () => {
+    const result: planValue = {
+      name: dataPlan[selectedPlan].name,
+      price: dataPlan[selectedPlan].price,
+      yearly
+    }
+    dispatch(savePlan(result));
+    dispatch(stepForward())
+  }
 
   return (
     <div className={styles.container}>
       <ul className={styles.list}>
         {
-          dataPlan.map((d) => (
-            <li className={styles.section}>
-              <img className={styles.icon} src={d.icon} alt={d.name}/>
+          dataPlan.map((d, index) => (
+            <li
+              className={`${styles.section} ${selectedPlan === index ? styles.section__selected : ''}`}
+              key={d.name}
+              onClick={() => handlePlanClick(index)}
+            >
+              <img
+                className={styles.icon}
+                src={d.icon}
+                alt={d.name}
+              />
               <p className={styles.plan}>{d.name}</p>
-              <p className={styles.price}>{d.price}</p>
+              <p className={styles.price}>${d.price}/mo</p>
             </li>
           ))
         }
       </ul>
       <div className={styles.choice}>
-        <label className={styles.label} htmlFor='checkbox-input' onClick={handleToggle}>Monthly</label>
+        <label
+          className={styles.label}
+          htmlFor='checkbox-input'
+          onClick={handleToggle}
+        >
+          Monthly
+        </label>
         <div className={styles.slider}>
           <input
             id='checkbox-input'
             type="checkbox"
             className={styles.checkbox}
-            checked={isChecked}
+            checked={yearly}
+            onChange={handleToggle}
           />
-          <div className={styles.track} onClick={handleToggle}>
-            <div className={styles.thumb} />
+          <div
+            className={styles.track}
+            onClick={handleToggle}>
+            <div className={styles.thumb}
+            />
           </div>
         </div>
-        <label className={styles.label} htmlFor='checkbox-input' onClick={handleToggle}>Yearly</label>
+        <label
+          className={styles.label}
+          htmlFor='checkbox-input'
+          onClick={handleToggle}
+        >
+          Yearly
+        </label>
+      </div>
+      <div className={styles.buttons}>
+        <button
+          className={styles.button__back}
+          onClick={handleBackClick}
+        >
+          Go back
+        </button>
+        <button
+          className={styles.button__next}
+          onClick={handleForwardClick}
+        >
+          Next step
+        </button>
       </div>
     </div>
   )
 }
 
-export default SecondPage;
+export default Plans;

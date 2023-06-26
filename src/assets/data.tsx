@@ -2,7 +2,7 @@ import Form from "../components/Form/Form";
 import Plans from "../components/Plans/Plans";
 import Summary from "../components/Summary/Summary";
 import AddOns from "../components/AddOns/AddOns";
-import { StepsValue, pageDataValue } from "../types/types";
+import { StepsValue, dataPlanValue, pageDataValue } from "../types/types";
 import arcadeIcon from '../img/icon-arcade.svg'
 import proIcon from '../img/icon-pro.svg'
 import advancedIcon from "../img/icon-advanced.svg"
@@ -53,20 +53,20 @@ export const dataPage: Array<pageDataValue> = [
   }
 ]
 
-export const dataPlan = [
+export const dataPlan: Array<dataPlanValue>= [
   {
     name: 'Arcade',
-    price: '$9/mo',
+    price: 9,
     icon: arcadeIcon
   },
   {
     name: 'Advanced',
-    price: '$12/mo',
+    price: 12,
     icon: advancedIcon
   },
   {
     name: 'Pro',
-    price: '$15/mo',
+    price: 15,
     icon: proIcon
   },
 ]

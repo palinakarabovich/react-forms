@@ -1,21 +1,17 @@
 import React from "react";
 
 export interface SidebarProps {
-  step: number,
 }
 
 export interface ConstructorProps {
-  setStep: React.Dispatch<React.SetStateAction<number>>,
-  step: number,
 }
 
 export interface CheckoutProps {
-  setStep: React.Dispatch<React.SetStateAction<number>>
 }
 
 export interface StepsValue {
-  step: number,
-  text: string
+  text: string,
+  step: number
 }
 
 export interface pageDataValue {
@@ -25,3 +21,20 @@ export interface pageDataValue {
   component: React.JSX.Element
 }
 
+export interface formValues {
+  name: string,
+  email: string,
+  phone: string
+}
+
+export interface dataPlanValue {
+  name: string,
+  price: number,
+  icon: string
+}
+
+export interface planValue {
+  name: string,
+  price: number,
+  yearly: boolean;
+}
