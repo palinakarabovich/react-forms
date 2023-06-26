@@ -13,7 +13,7 @@ function App() {
       <div className={styles.page}>
         <Sidebar step={step} />
         {step > 4 ?
-          <Checkout />
+          <Checkout setStep={setStep}/>
           :
           <Constructor setStep={setStep} step={step} />
         }
