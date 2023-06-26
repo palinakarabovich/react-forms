@@ -5,12 +5,12 @@ export interface SidebarProps {
 }
 
 export interface ConstructorProps {
-  setStep:  React.Dispatch<React.SetStateAction<number>>,
-  step: number
+  setStep: React.Dispatch<React.SetStateAction<number>>,
+  step: number,
 }
 
 export interface CheckoutProps {
-  setStep:  React.Dispatch<React.SetStateAction<number>>
+  setStep: React.Dispatch<React.SetStateAction<number>>
 }
 
 export interface StepsValue {
