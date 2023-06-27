@@ -47,7 +47,7 @@ const Form: React.FC = () => {
         <p className={styles.error}>{errors.name && convertErrorMessageToString(errors.name.message)}</p>
         <label className={styles.label}>Email Address</label>
         <input
-          className={`${styles.input} ${errors.name && styles.input__error}`}
+          className={`${styles.input} ${errors.email && styles.input__error}`}
           {...register('email', {
             required: 'This field is required',
             pattern: {
@@ -60,7 +60,7 @@ const Form: React.FC = () => {
         <p className={styles.error}>{errors.email && convertErrorMessageToString(errors.email.message)}</p>
         <label className={styles.label}>Phone Number</label>
         <input
-          className={`${styles.input} ${errors.name && styles.input__error}`}
+          className={`${styles.input} ${errors.phone && styles.input__error}`}
           {...register('phone', {
             required: 'This field is required',
             pattern: {
