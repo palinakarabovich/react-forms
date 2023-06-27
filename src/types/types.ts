@@ -24,7 +24,7 @@ export interface pageDataValue {
 export interface formValues {
   name: string,
   email: string,
-  phone: string
+  phone: string,
 }
 
 export interface dataPlanValue {
@@ -41,4 +41,10 @@ export interface planValue {
 
 export interface ButtonsGroupProps {
   handleForwardClick: () => void
+}
+
+export interface addOnsValue {
+  name: string,
+  price: number,
+  caption: string
 }

@@ -45,7 +45,9 @@ const Form: React.FC = () => {
           value={form.phone}
         />
       </form>
-      <ButtonsGroup handleForwardClick={submitForm}/>
+      <ButtonsGroup
+        handleForwardClick={submitForm}
+      />
     </section>
   )
 }

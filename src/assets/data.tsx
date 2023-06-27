@@ -2,7 +2,7 @@ import Form from "../components/Form/Form";
 import Plans from "../components/Plans/Plans";
 import Summary from "../components/Summary/Summary";
 import AddOns from "../components/AddOns/AddOns";
-import { StepsValue, dataPlanValue, pageDataValue } from "../types/types";
+import { StepsValue, addOnsValue, dataPlanValue, pageDataValue } from "../types/types";
 import arcadeIcon from '../img/icon-arcade.svg'
 import proIcon from '../img/icon-pro.svg'
 import advancedIcon from "../img/icon-advanced.svg"
@@ -71,20 +71,20 @@ export const dataPlan: Array<dataPlanValue>= [
   },
 ]
 
-export const dataAddons = [
+export const dataAddons: Array<addOnsValue> = [
   {
     name: 'Online service',
     caption: 'Access to multiple services',
-    price: '+1$/mo'
+    price: 1
   },
   {
     name: 'Larger storage',
     caption: 'Extra 1TB of cloud service',
-    price: '+2$/mo'
+    price: 2
   },
   {
     name: 'Customizable profile',
     caption: 'Custom theme on your profile',
-    price: '+2$/mo'
+    price: 2
   },
 ]

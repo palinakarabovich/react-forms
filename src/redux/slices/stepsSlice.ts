@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+interface InitialStateValues {
+  step: number
+}
+
+const initialState: InitialStateValues = {
   step: 1
 }
 

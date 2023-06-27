@@ -6,12 +6,21 @@ import { stepForward } from '../../redux/slices/stepsSlice';
 import { savePlan } from '../../redux/slices/formSlice';
 import { planValue } from '../../types/types';
 import ButtonsGroup from '../ButtonsGroup/ButtonsGroup';
+import { useAppSelector } from '../../hooks/useSelector';
 
 const Plans: React.FC = () => {
 
   const [yearly, setYearly] = React.useState<boolean>(false);
   const [selectedPlan, setSelectedPlan] = React.useState<number>(1);
   const dispatch = useAppDispatch();
+  const {plan} = useAppSelector((store) => store.form);
+
+  React.useEffect(() => {
+    if(plan.name !== '') {
+      setSelectedPlan(dataPlan.findIndex((d) => d.name === plan.name))
+    }
+    setYearly(plan.yearly)
+  }, [])
 
   const handleToggle = () => {
     setYearly(!yearly);

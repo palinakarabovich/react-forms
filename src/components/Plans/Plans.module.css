@@ -29,6 +29,7 @@
   justify-content: center;
   flex-direction: column;
   gap: 10px;
+  transition: ease-in-out .2s;
 }
 
 .section__selected{
