@@ -5,6 +5,7 @@ import { useAppDispatch } from "../../hooks/useDispatch";
 import { saveForm } from "../../redux/slices/formSlice";
 import { stepForward } from "../../redux/slices/stepsSlice";
 import { formValues } from "../../types/types";
+import ButtonsGroup from "../ButtonsGroup/ButtonsGroup";
 
 const Form: React.FC = () => {
 
@@ -15,7 +16,7 @@ const Form: React.FC = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  const handleNextClick = () => {
+  const submitForm = () => {
     dispatch(saveForm(form));
     dispatch(stepForward());
   }
@@ -44,12 +45,7 @@ const Form: React.FC = () => {
           value={form.phone}
         />
       </form>
-      <button
-        className={styles.button__next}
-        onClick={handleNextClick}
-      >
-        Next step
-      </button>
+      <ButtonsGroup handleForwardClick={submitForm}/>
     </section>
   )
 }

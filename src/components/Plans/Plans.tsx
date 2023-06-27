@@ -5,6 +5,7 @@ import { useAppDispatch } from '../../hooks/useDispatch';
 import { stepForward } from '../../redux/slices/stepsSlice';
 import { savePlan } from '../../redux/slices/formSlice';
 import { planValue } from '../../types/types';
+import ButtonsGroup from '../ButtonsGroup/ButtonsGroup';
 
 const Plans: React.FC = () => {
 
@@ -20,11 +21,7 @@ const Plans: React.FC = () => {
     setSelectedPlan(index);
   }
 
-  const handleBackClick = () => {
-    dispatch(stepForward())
-  }
-
-  const handleForwardClick = () => {
+  const submitPlan = () => {
     const result: planValue = {
       name: dataPlan[selectedPlan].name,
       price: dataPlan[selectedPlan].price,
@@ -86,20 +83,9 @@ const Plans: React.FC = () => {
           Yearly
         </label>
       </div>
-      <div className={styles.buttons}>
-        <button
-          className={styles.button__back}
-          onClick={handleBackClick}
-        >
-          Go back
-        </button>
-        <button
-          className={styles.button__next}
-          onClick={handleForwardClick}
-        >
-          Next step
-        </button>
-      </div>
+        <ButtonsGroup
+        handleForwardClick={submitPlan}
+        />
     </div>
   )
 }

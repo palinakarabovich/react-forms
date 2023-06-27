@@ -38,3 +38,7 @@ export interface planValue {
   price: number,
   yearly: boolean;
 }
+
+export interface ButtonsGroupProps {
+  handleForwardClick: () => void
+}
