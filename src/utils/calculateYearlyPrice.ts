@@ -1,0 +1,1 @@
+export const calculateYearlyPrice = (p: number) => p*12;

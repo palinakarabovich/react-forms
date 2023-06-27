@@ -2,16 +2,11 @@ import React from 'react';
 import styles from './Constructor.module.css'
 import { ConstructorProps } from '../../types/types';
 import { dataPage } from '../../assets/data';
+import { useAppSelector } from '../../hooks/useSelector';
 
-const Constructor: React.FC<ConstructorProps> = ({ step, setStep }) => {
+const Constructor: React.FC<ConstructorProps> = () => {
 
-  const handleForwardClick = () => {
-    setStep((prev) => prev + 1)
-  }
-
-  const handleBackClick = () => {
-    setStep((prev) => prev - 1)
-  }
+  const { step } = useAppSelector((store) => store.steps)
 
   return (
     <>
@@ -25,11 +20,6 @@ const Constructor: React.FC<ConstructorProps> = ({ step, setStep }) => {
                   <p className={styles.paragraph}>{d.caption}</p>
                 </div>
                 {d.component}
-                <div className={styles.buttons}>
-                  <button className={styles.button__back} onClick={handleBackClick} style={step === 1 ? { visibility: 'hidden' } : {}}>Go back</button>
-                  <button className={styles.button__next} onClick={handleForwardClick}>Next step</button>
-                </div>
-
               </section>
             )
           }

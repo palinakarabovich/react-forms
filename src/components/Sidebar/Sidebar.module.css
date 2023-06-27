@@ -34,22 +34,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: ease-in-out .2s;
 }
 
 .circle__current{
   background-color: rgb(247, 248, 255);
    color: rgb(0, 30, 92);
+   transition: ease-in-out .2s;
 }
 
 .circle__viewed{
   color: rgb(170, 150, 255);
   border-color: rgb(170, 150, 255);
+  transition: ease-in-out .2s;
 }
 
 .number{
   margin: 0;
   font-weight: 900;
   font-size: 15px;
+  transition: ease-in-out .2s;
 }
 
 .step__description{
@@ -71,8 +75,10 @@
   text-transform: uppercase;
   font-size: 15px;
   font-weight: 900;
+  transition: ease-in-out .2s;
 }
 
 .step__textViewed{
   color:rgb(170, 150, 255);
+  transition: ease-in-out .2s;
 }
